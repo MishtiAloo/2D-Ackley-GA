@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GA Visualizer - 2D Ackley Function</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='13' fill='%234cc2ff'/><circle cx='16' cy='16' r='4' fill='%230e1116'/></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===================== top bar ===================== -->
+<header class="topbar">
+  <div class="brand">
+    <span class="dot"></span>
+    <strong>Genetic Algorithm</strong>
+    <span class="sub">2D Ackley function &middot; global minimum f(0,0) = 0</span>
+  </div>
+
+  <div class="modes">
+    <span class="label">mode</span>
+    <div class="seg" id="mode-switch">
+      <button data-mode="auto">auto</button>
+      <button data-mode="manual" class="on">manual</button>
+    </div>
+  </div>
+
+  <div class="readouts">
+    <div class="ro"><span>generation</span><b id="ro-gen">-</b></div>
+    <div class="ro"><span>best f(x)</span><b id="ro-best">-</b></div>
+    <div class="ro"><span>best point</span><b id="ro-point">-</b></div>
+    <div class="ro"><span>stagnation</span><b id="ro-stag">-</b></div>
+    <div class="ro"><span>next stage</span><b id="ro-stage">-</b></div>
+  </div>
+</header>
+
+<div id="banner" class="banner hidden"></div>
+
+<!-- ===================== layout ===================== -->
+<div class="layout">
+
+  <!-- ---------- left: parameters ---------- -->
+  <aside class="side left" id="side-left">
+    <div class="side-head">
+      <h2>Parameters</h2>
+      <div class="head-tools">
+        <button id="btn-reset-params" class="mini">defaults</button>
+        <button id="btn-collapse" class="mini icon" title="hide the parameter panel">&lsaquo;</button>
+      </div>
+    </div>
+    <div id="params"></div>
+    <div class="side-foot">
+      <div id="dirty" class="dirty hidden">parameters changed</div>
+      <button id="btn-restart" class="primary wide">Apply &amp; restart run</button>
+    </div>
+
+    <!-- shown instead of everything above while the panel is collapsed -->
+    <button id="btn-expand" class="rail" title="show the parameter panel">
+      &rsaquo;<span>parameters</span>
+    </button>
+  </aside>
+
+  <!-- ---------- middle: the picture ---------- -->
+  <main class="main">
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Search space</h2>
+        <div class="tools">
+          <div class="seg small" id="view-switch">
+            <button data-view="2d" class="on">2D map</button>
+            <button data-view="3d">3D surface</button>
+          </div>
+          <label class="chk"><input type="checkbox" id="chk-bands"> contour bands</label>
+          <label class="chk"><input type="checkbox" id="chk-ids"> ids</label>
+        </div>
+      </div>
+      <div class="canvas-wrap">
+        <canvas id="landscape"></canvas>
+        <div id="hint3d" class="hint hidden">drag to rotate &middot; wheel to zoom</div>
+      </div>
+      <div class="legend" id="legend"></div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Convergence</h2>
+        <div class="tools">
+          <label class="chk"><input type="checkbox" id="chk-log" checked> log scale</label>
+        </div>
+      </div>
+      <div class="canvas-wrap chart">
+        <canvas id="chart"></canvas>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ---------- right: what happens inside one generation ---------- -->
+  <aside class="side right">
+
+    <div class="side-head">
+      <h2>Generation inspector</h2>
+    </div>
+
+    <!-- run controls -->
+    <div class="controls">
+
+      <div id="manual-controls">
+        <div class="row">
+          <span class="label">manual</span>
+          <div class="seg small grow" id="manual-switch">
+            <button data-sub="step" class="on">one step at a time</button>
+            <button data-sub="generation">whole generation</button>
+          </div>
+        </div>
+
+        <div class="row" id="anim-row">
+          <label class="chk"><input type="checkbox" id="chk-anim" checked> animations</label>
+          <label class="rng grow">speed
+            <input type="range" id="rng-speed" min="20" max="700" step="10" value="190">
+            <output id="out-speed">190 ms</output>
+          </label>
+        </div>
+
+        <div class="row">
+          <button id="btn-step" class="primary grow">Next step &rarr;</button>
+          <button id="btn-skip" class="ghost hidden">skip animation</button>
+        </div>
+
+        <div class="stagebar" id="stagebar"></div>
+      </div>
+
+      <div id="auto-controls" class="hidden">
+        <div class="row">
+          <button id="btn-play" class="primary grow">Play</button>
+          <button id="btn-one" class="ghost">+1 gen</button>
+        </div>
+        <div class="row">
+          <label class="rng grow">generations per second
+            <input type="range" id="rng-fps" min="1" max="60" step="1" value="12">
+            <output id="out-fps">12</output>
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="inspector"></div>
+  </aside>
+
+</div>
+
+<script src="js/ackley.js"></script>
+<script src="js/landscape.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/stages.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
