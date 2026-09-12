@@ -61,11 +61,11 @@ var Chart = {
     ctx.clearRect(0, 0, this.w, this.h);
 
     var rect = { x: 46, y: 8, w: this.w - 58, h: this.h - 30 };
-    ctx.strokeStyle = '#222b38';
+    ctx.strokeStyle = Theme.c('--c-chart-frame');
     ctx.strokeRect(rect.x + 0.5, rect.y + 0.5, rect.w - 1, rect.h - 1);
 
     if (this.best.length === 0) {
-      ctx.fillStyle = '#8d9bb0';
+      ctx.fillStyle = Theme.c('--c-chart-label');
       ctx.font = '11px Consolas, monospace';
       ctx.textAlign = 'center';
       ctx.fillText('no generations yet', this.w / 2, this.h / 2);
@@ -89,7 +89,7 @@ var Chart = {
 
     // horizontal guides
     ctx.font = '9px Consolas, monospace';
-    ctx.fillStyle = '#6c7a8d';
+    ctx.fillStyle = Theme.c('--c-chart-label');
     ctx.textAlign = 'right';
     var lines = 4;
     for (var g = 0; g <= lines; g++) {
@@ -103,7 +103,7 @@ var Chart = {
         value = vmin + t * (vmax - vmin);
       }
       var py = this.yFor(value, rect, vmin, vmax);
-      ctx.strokeStyle = 'rgba(255,255,255,.05)';
+      ctx.strokeStyle = Theme.c('--c-chart-guide');
       ctx.beginPath();
       ctx.moveTo(rect.x, py);
       ctx.lineTo(rect.x + rect.w, py);
@@ -125,28 +125,30 @@ var Chart = {
       ctx.stroke();
     };
 
-    drawLine(this.avg, '#ff9f45', 1.1);
-    drawLine(this.best, '#4cc2ff', 1.8);
+    var bestColor = Theme.c('--c-series-best');
+    var avgColor = Theme.c('--c-series-avg');
+    drawLine(this.avg, avgColor, 1.1);
+    drawLine(this.best, bestColor, 1.8);
 
     // last point
     var lastX = xFor(this.best.length - 1);
     var lastY = this.yFor(this.best[this.best.length - 1], rect, vmin, vmax);
     ctx.beginPath();
     ctx.arc(lastX, lastY, 3, 0, 6.2832);
-    ctx.fillStyle = '#4cc2ff';
+    ctx.fillStyle = bestColor;
     ctx.fill();
 
     // x labels + legend
     ctx.textAlign = 'center';
-    ctx.fillStyle = '#6c7a8d';
+    ctx.fillStyle = Theme.c('--c-chart-label');
     ctx.fillText('1', rect.x, rect.y + rect.h + 13);
     ctx.fillText(String(this.best.length), rect.x + rect.w, rect.y + rect.h + 13);
     ctx.fillText('generation', rect.x + rect.w / 2, rect.y + rect.h + 13);
 
     ctx.textAlign = 'left';
-    ctx.fillStyle = '#4cc2ff';
+    ctx.fillStyle = bestColor;
     ctx.fillText('best', rect.x + 6, rect.y + 11);
-    ctx.fillStyle = '#ff9f45';
+    ctx.fillStyle = avgColor;
     ctx.fillText('average', rect.x + 40, rect.y + 11);
   }
 };

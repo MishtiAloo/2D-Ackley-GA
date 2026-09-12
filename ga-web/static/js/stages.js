@@ -358,10 +358,13 @@ var Stages = {
     this.host.appendChild(node);
 
     // the map: population with halos sized by how often each one is picked
+    var selRoles = populationRoles(snapshot.values, Landscape.cfg.elite);
     Landscape.setData({
       population: snapshot.population,
       values: snapshot.values,
-      bestIndex: -1, worstIndex: -1, eliteIndices: []
+      bestIndex: selRoles.bestIndex,
+      worstIndex: selRoles.worstIndex,
+      eliteIndices: selRoles.eliteIndices
     });
 
     if (!animate) {
@@ -505,10 +508,13 @@ var Stages = {
     var node = this.buildCrossover(detail, snapshot, !animate);
     this.host.appendChild(node);
 
+    var croRoles = populationRoles(snapshot.values, Landscape.cfg.elite);
     Landscape.setData({
       population: snapshot.population,
       values: snapshot.values,
-      bestIndex: -1, worstIndex: -1, eliteIndices: []
+      bestIndex: croRoles.bestIndex,
+      worstIndex: croRoles.worstIndex,
+      eliteIndices: croRoles.eliteIndices
     });
 
     if (!animate) {
@@ -808,36 +814,28 @@ var Stages = {
   },
 
   paintCommit: function (snapshot) {
-    var bestIndex = -1;
-    var bestValue = Infinity;
-    for (var i = 0; i < snapshot.values.length; i++) {
-      if (snapshot.values[i] < bestValue) { bestValue = snapshot.values[i]; bestIndex = i; }
-    }
+    var roles = populationRoles(snapshot.values, Landscape.cfg.elite);
     Landscape.setData({
       population: snapshot.population,
       values: snapshot.values,
-      bestIndex: bestIndex,
-      worstIndex: -1,
-      eliteIndices: []
+      bestIndex: roles.bestIndex,
+      worstIndex: roles.worstIndex,
+      eliteIndices: roles.eliteIndices
     });
     Landscape.setOverlay({});
   },
 
   /* draw an arbitrary cloud of points (children, for example) */
   paintCloud: function (points, values, overlay) {
-    var bestIndex = -1;
-    if (values) {
-      var bestValue = Infinity;
-      for (var i = 0; i < values.length; i++) {
-        if (values[i] < bestValue) { bestValue = values[i]; bestIndex = i; }
-      }
-    }
+    // a cloud of children is not a generation yet, so elitism does not apply
+    var roles = values ? populationRoles(values, 0)
+                       : { bestIndex: -1, worstIndex: -1, eliteIndices: [] };
     Landscape.setData({
       population: points,
       values: values || [],
-      bestIndex: bestIndex,
-      worstIndex: -1,
-      eliteIndices: []
+      bestIndex: roles.bestIndex,
+      worstIndex: roles.worstIndex,
+      eliteIndices: roles.eliteIndices
     });
     Landscape.setOverlay(overlay || {});
   }

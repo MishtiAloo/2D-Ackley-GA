@@ -341,15 +341,49 @@ function updateStageBar(snapshot) {
 }
 
 function setLegend() {
-  $('legend').innerHTML =
-    '<span><i style="background:#fff"></i>individual</span>' +
-    '<span><i style="background:#ffd166"></i>best of generation</span>' +
-    '<span><i style="background:#3ddc97"></i>elite (ring)</span>' +
-    '<span><i style="background:#ff6b81"></i>worst</span>' +
-    '<span><i style="background:#4cc2ff"></i>parent A</span>' +
-    '<span><i style="background:#ff7ad9"></i>parent B</span>' +
-    '<span><i style="background:#ffb03a"></i>mutated gene</span>' +
+  /* Each swatch is drawn as the same shape the renderer puts on the map,
+     in the same colour, so the legend and the picture cannot drift apart. */
+  var items = [
+    ['dot',   '#ffffff', 'individual'],
+    ['star',  '#ffd166', 'best of generation'],
+    ['ring',  '#3ddc97', 'elite'],
+    ['dot',   '#ff6b81', 'worst'],
+    ['sq',    '#4cc2ff', 'parent A'],
+    ['sq',    '#ff7ad9', 'parent B'],
+    ['dot',   '#ffb03a', 'mutated gene']
+  ];
+  var html = '';
+  for (var i = 0; i < items.length; i++) {
+    html += '<span>' + swatch(items[i][0], items[i][1]) + items[i][2] + '</span>';
+  }
+  $('legend').innerHTML = html +
     '<span>dashed cross = known optimum (0,0)</span>';
+}
+
+/* A 14x14 SVG marker: filled dot, hollow ring, square or five-pointed star.
+   It carries the same dark halo the map draws behind its markers, so a
+   swatch and the thing it stands for look like the same object. */
+function swatch(shape, color) {
+  var halo = ' stroke="rgba(0,0,0,.72)" stroke-width="2.6" paint-order="stroke"';
+  var body;
+  if (shape === 'ring') {
+    body = '<circle cx="7" cy="7" r="4.6" fill="none" stroke="rgba(0,0,0,.72)" stroke-width="3.4"/>' +
+           '<circle cx="7" cy="7" r="4.6" fill="none" stroke="' + color + '" stroke-width="1.7"/>';
+  } else if (shape === 'sq') {
+    body = '<rect x="2.6" y="2.6" width="8.8" height="8.8" fill="' + color + '"' + halo + '/>';
+  } else if (shape === 'star') {
+    var pts = [];
+    for (var i = 0; i < 10; i++) {
+      var ang = -Math.PI / 2 + i * Math.PI / 5;
+      var rr = (i % 2 === 0) ? 5.8 : 2.6;
+      pts.push((7 + Math.cos(ang) * rr).toFixed(2) + ',' + (7 + Math.sin(ang) * rr).toFixed(2));
+    }
+    body = '<polygon points="' + pts.join(' ') + '" fill="' + color + '"' + halo +
+           ' stroke-linejoin="round"/>';
+  } else {
+    body = '<circle cx="7" cy="7" r="3.9" fill="' + color + '"' + halo + '/>';
+  }
+  return '<svg viewBox="0 0 14 14" width="14" height="14">' + body + '</svg>';
 }
 
 /* ------------------------------------------------------------------------
@@ -377,14 +411,18 @@ function restart() {
 
     var cfg = res.snapshot.config;
     Landscape.setConfig({ a: cfg.a, b: cfg.b, c: cfg.c,
-                          low: cfg.lower_bound, high: cfg.upper_bound });
+                          low: cfg.lower_bound, high: cfg.upper_bound,
+                          elite: cfg.elite_count });
     Chart.setData([], [], cfg.max_generations);
 
     // show the starting population (not scored yet by the GA loop)
+    var start = populationRoles(res.snapshot.values, cfg.elite_count);
     Landscape.setData({
       population: res.snapshot.population,
       values: res.snapshot.values,
-      bestIndex: -1, worstIndex: -1, eliteIndices: []
+      bestIndex: start.bestIndex,
+      worstIndex: start.worstIndex,
+      eliteIndices: start.eliteIndices
     });
     Landscape.setOverlay({});
 
@@ -445,15 +483,13 @@ function doGeneration() {
 /* ---- automatic mode ---- */
 
 function autoFrame(frame) {
-  var bestIndex = -1;
-  var bestValue = Infinity;
-  for (var i = 0; i < frame.values.length; i++) {
-    if (frame.values[i] < bestValue) { bestValue = frame.values[i]; bestIndex = i; }
-  }
+  var roles = populationRoles(frame.values, Landscape.cfg.elite);
   Landscape.setData({
     population: frame.population,
     values: frame.values,
-    bestIndex: bestIndex, worstIndex: -1, eliteIndices: []
+    bestIndex: roles.bestIndex,
+    worstIndex: roles.worstIndex,
+    eliteIndices: roles.eliteIndices
   });
   Landscape.setOverlay({});
   Chart.setData(frame.history_best, frame.history_average);
@@ -554,6 +590,29 @@ function wireControls() {
     })(subButtons[j]);
   }
 
+  // dark / light
+  var themeButtons = $('theme-switch').querySelectorAll('button');
+  var markTheme = function (name) {
+    for (var t = 0; t < themeButtons.length; t++) {
+      themeButtons[t].classList.toggle('on',
+        themeButtons[t].getAttribute('data-theme') === name);
+    }
+  };
+  markTheme(Theme.name);
+  for (var t2 = 0; t2 < themeButtons.length; t2++) {
+    (function (button) {
+      button.addEventListener('click', function () {
+        Theme.set(button.getAttribute('data-theme'));
+        markTheme(Theme.name);
+      });
+    })(themeButtons[t2]);
+  }
+  // the drawings are not styled by CSS, so they have to be told
+  Theme.onChange(function () {
+    Landscape.retheme();
+    Chart.draw();
+  });
+
   // 2D / 3D view
   var viewButtons = $('view-switch').querySelectorAll('button');
   for (var v = 0; v < viewButtons.length; v++) {
@@ -635,6 +694,9 @@ function wireControls() {
 }
 
 function boot() {
+  // before anything is measured or drawn, so nothing flashes the wrong colour
+  Theme.init();
+
   // restore the panel state from the last visit
   var stored = null;
   try {

@@ -19,15 +19,19 @@ function ackley2d(x1, x2, a, b, c) {
 
 /* ---------------------------------------------------------------------------
    Colour map used for the heatmap and the 3D surface.
-   t = 0 -> deep blue (low f, good), t = 1 -> pale yellow (high f, bad).
+   t = 0 is the bottom of the basin, where the global minimum sits, and runs
+   red -> orange -> yellow -> green as f(x) climbs. So the red in the middle
+   of the picture is the target, and the green rim is the worst ground.
    --------------------------------------------------------------------------- */
 var COLOR_STOPS = [
-  [8, 12, 40],
-  [26, 62, 120],
-  [21, 122, 129],
-  [76, 176, 96],
-  [214, 198, 70],
-  [252, 246, 206]
+  [158, 22, 40],
+  [205, 40, 45],
+  [233, 86, 48],
+  [245, 140, 55],
+  [250, 196, 74],
+  [205, 218, 88],
+  [120, 200, 94],
+  [56, 170, 106]
 ];
 
 function colorForT(t, bands) {

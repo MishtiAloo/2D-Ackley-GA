@@ -25,6 +25,14 @@
     </div>
   </div>
 
+  <div class="modes">
+    <span class="label">theme</span>
+    <div class="seg" id="theme-switch">
+      <button data-theme="dark">dark</button>
+      <button data-theme="light">light</button>
+    </div>
+  </div>
+
   <div class="readouts">
     <div class="ro"><span>generation</span><b id="ro-gen">-</b></div>
     <div class="ro"><span>best f(x)</span><b id="ro-best">-</b></div>
@@ -77,7 +85,7 @@
       </div>
       <div class="canvas-wrap">
         <canvas id="landscape"></canvas>
-        <div id="hint3d" class="hint hidden">drag to rotate &middot; wheel to zoom</div>
+        <div id="hint3d" class="hint hidden">drag to rotate &middot; wheel to zoom &middot; double-click to reset</div>
       </div>
       <div class="legend" id="legend"></div>
     </section>
@@ -151,6 +159,7 @@
 
 </div>
 
+<script src="js/theme.js"></script>
 <script src="js/ackley.js"></script>
 <script src="js/landscape.js"></script>
 <script src="js/chart.js"></script>
