@@ -1,0 +1,44 @@
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5011
+Press CTRL+C to quit
+127.0.0.1 - - [12/Sep/2026 19:12:26] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:12:26] "GET /js/ackley.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:12:26] "GET /js/theme.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:12:26] "GET /css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:12:26] "GET /js/landscape.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:12:26] "GET /js/chart.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:12:26] "GET /js/stages.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:12:26] "GET /js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:12:26] "GET /api/defaults HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:12:26] "POST /api/init HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:13:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:13:24] "GET /css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:13:24] "GET /js/theme.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:13:24] "GET /js/landscape.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:13:24] "GET /js/ackley.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:13:24] "GET /js/stages.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:13:24] "GET /js/chart.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:13:24] "GET /js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:13:24] "GET /api/defaults HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:13:24] "POST /api/init HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:23:34] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:23:34] "GET /js/landscape.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:23:34] "GET /js/theme.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:23:34] "GET /css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:23:34] "GET /js/ackley.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:23:34] "GET /js/chart.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:23:34] "GET /js/stages.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:23:34] "GET /js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:23:34] "GET /api/defaults HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:23:34] "POST /api/init HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:25:18] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:25:18] "GET /css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:25:18] "GET /js/ackley.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:25:18] "GET /js/landscape.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:25:18] "GET /js/theme.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:25:18] "GET /js/chart.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:25:18] "GET /js/stages.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:25:18] "GET /js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:25:18] "GET /api/defaults HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:25:18] "POST /api/init HTTP/1.1" 200 -
+127.0.0.1 - - [12/Sep/2026 19:26:49] "POST /api/shutdown HTTP/1.1" 200 -

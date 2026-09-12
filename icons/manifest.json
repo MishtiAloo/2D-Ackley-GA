@@ -1,0 +1,464 @@
+[
+  {
+    "folder": "01-core-ga",
+    "file": "01-population.svg",
+    "iconify_id": "icon-park:peoples",
+    "concept": "Population",
+    "set": "icon-park"
+  },
+  {
+    "folder": "01-core-ga",
+    "file": "02-fitness-evaluation.svg",
+    "iconify_id": "icon-park:dashboard",
+    "concept": "Fitness evaluation (gauge)",
+    "set": "icon-park"
+  },
+  {
+    "folder": "01-core-ga",
+    "file": "03-selection-roulette.svg",
+    "iconify_id": "icon-park:pie-five",
+    "concept": "Roulette-wheel selection",
+    "set": "icon-park"
+  },
+  {
+    "folder": "01-core-ga",
+    "file": "04-crossover.svg",
+    "iconify_id": "icon-park:scissors",
+    "concept": "One-point crossover",
+    "set": "icon-park"
+  },
+  {
+    "folder": "01-core-ga",
+    "file": "05-mutation.svg",
+    "iconify_id": "icon-park:lightning",
+    "concept": "Gaussian mutation",
+    "set": "icon-park"
+  },
+  {
+    "folder": "01-core-ga",
+    "file": "06-elitism.svg",
+    "iconify_id": "icon-park:crown",
+    "concept": "Elitism",
+    "set": "icon-park"
+  },
+  {
+    "folder": "01-core-ga",
+    "file": "07-new-generation.svg",
+    "iconify_id": "icon-park:cycle",
+    "concept": "New generation",
+    "set": "icon-park"
+  },
+  {
+    "folder": "02-ackley",
+    "file": "ackley-3d-surface.svg",
+    "iconify_id": "icon-park:mountain",
+    "concept": "Ackley 3D surface / landscape",
+    "set": "icon-park"
+  },
+  {
+    "folder": "02-ackley",
+    "file": "search-space-grid.svg",
+    "iconify_id": "icon-park:grid-four",
+    "concept": "Search space grid / 2D heatmap",
+    "set": "icon-park"
+  },
+  {
+    "folder": "02-ackley",
+    "file": "coordinate-system.svg",
+    "iconify_id": "icon-park:full-screen-two",
+    "concept": "Search space, -5 to 5 per gene",
+    "set": "icon-park"
+  },
+  {
+    "folder": "02-ackley",
+    "file": "global-minimum-target.svg",
+    "iconify_id": "icon-park:target",
+    "concept": "Global minimum",
+    "set": "icon-park"
+  },
+  {
+    "folder": "02-ackley",
+    "file": "origin-crosshair.svg",
+    "iconify_id": "icon-park:aiming",
+    "concept": "Known optimum at the origin",
+    "set": "icon-park"
+  },
+  {
+    "folder": "02-ackley",
+    "file": "candidate-solution-pin.svg",
+    "iconify_id": "icon-park:local-pin",
+    "concept": "Candidate solution point",
+    "set": "icon-park"
+  },
+  {
+    "folder": "02-ackley",
+    "file": "function-evaluation.svg",
+    "iconify_id": "icon-park:calculator",
+    "concept": "Ackley function evaluation",
+    "set": "icon-park"
+  },
+  {
+    "folder": "02-ackley",
+    "file": "population-on-surface.svg",
+    "iconify_id": "icon-park:chart-scatter",
+    "concept": "Population drawn on the surface",
+    "set": "icon-park"
+  },
+  {
+    "folder": "02-ackley",
+    "file": "three-d-view.svg",
+    "iconify_id": "icon-park:cube",
+    "concept": "3D view / rotatable surface",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "chromosome-dna.svg",
+    "iconify_id": "custom",
+    "concept": "Genetic algorithm / chromosome",
+    "set": "custom (drawn in IconPark style)"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "random-initialization.svg",
+    "iconify_id": "custom",
+    "concept": "Random initialization",
+    "set": "custom (drawn in IconPark style)"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "shuffle.svg",
+    "iconify_id": "icon-park:shuffle",
+    "concept": "Randomisation / shuffle",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "real-valued-genes.svg",
+    "iconify_id": "icon-park:adjustment",
+    "concept": "Real-valued chromosome (sliders)",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "ranking-individuals.svg",
+    "iconify_id": "icon-park:ranking-list",
+    "concept": "Ranking individuals",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "best-individual.svg",
+    "iconify_id": "icon-park:gold-medal",
+    "concept": "Best individual",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "selection-probability.svg",
+    "iconify_id": "icon-park:chart-pie",
+    "concept": "Selection probability",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "mating-pool.svg",
+    "iconify_id": "icon-park:peoples-two",
+    "concept": "Mating pool",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "parent-pair.svg",
+    "iconify_id": "icon-park:connect",
+    "concept": "Parent pair",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "cut-point.svg",
+    "iconify_id": "icon-park:cutting",
+    "concept": "One-point cut",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "gene-swap.svg",
+    "iconify_id": "icon-park:exchange",
+    "concept": "Gene swapping",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "offspring-branch.svg",
+    "iconify_id": "icon-park:branch",
+    "concept": "Child / offspring",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "probability-percent.svg",
+    "iconify_id": "icon-park:percentage",
+    "concept": "Crossover / mutation probability",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "per-gene-mutation.svg",
+    "iconify_id": "icon-park:focus",
+    "concept": "Per-gene mutation",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "gaussian-curve.svg",
+    "iconify_id": "icon-park:bezier-curve",
+    "concept": "Gaussian perturbation, bell curve",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "bounds-handling.svg",
+    "iconify_id": "icon-park:rectangle-one",
+    "concept": "Bounds handling box",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "resampling.svg",
+    "iconify_id": "icon-park:refresh",
+    "concept": "Resampling / reroll",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "preserve-best.svg",
+    "iconify_id": "icon-park:protect",
+    "concept": "Preserve best solution",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "generation-counter.svg",
+    "iconify_id": "icon-park:layers",
+    "concept": "Generation counter",
+    "set": "icon-park"
+  },
+  {
+    "folder": "03-ga-mechanics",
+    "file": "iteration-loop.svg",
+    "iconify_id": "icon-park:round-trip",
+    "concept": "GA iteration loop",
+    "set": "icon-park"
+  },
+  {
+    "folder": "04-results",
+    "file": "stagnation-pause.svg",
+    "iconify_id": "icon-park:pause",
+    "concept": "Stagnation",
+    "set": "icon-park"
+  },
+  {
+    "folder": "04-results",
+    "file": "stopping-criterion.svg",
+    "iconify_id": "icon-park:flag",
+    "concept": "Stopping criterion",
+    "set": "icon-park"
+  },
+  {
+    "folder": "04-results",
+    "file": "max-generations.svg",
+    "iconify_id": "icon-park:hourglass",
+    "concept": "Maximum generations",
+    "set": "icon-park"
+  },
+  {
+    "folder": "04-results",
+    "file": "convergence-curve.svg",
+    "iconify_id": "icon-park:trending-down",
+    "concept": "Convergence",
+    "set": "icon-park"
+  },
+  {
+    "folder": "04-results",
+    "file": "convergence-plot.svg",
+    "iconify_id": "icon-park:chart-line",
+    "concept": "Convergence plot",
+    "set": "icon-park"
+  },
+  {
+    "folder": "04-results",
+    "file": "best-fitness.svg",
+    "iconify_id": "icon-park:chart-histogram",
+    "concept": "Best fitness over generations",
+    "set": "icon-park"
+  },
+  {
+    "folder": "04-results",
+    "file": "distance-to-origin.svg",
+    "iconify_id": "icon-park:ruler",
+    "concept": "Distance to the origin",
+    "set": "icon-park"
+  },
+  {
+    "folder": "04-results",
+    "file": "successful-solution.svg",
+    "iconify_id": "icon-park:trophy",
+    "concept": "Successful solution",
+    "set": "icon-park"
+  },
+  {
+    "folder": "04-results",
+    "file": "verdict-check.svg",
+    "iconify_id": "icon-park:check-one",
+    "concept": "Checkmark / verdict",
+    "set": "icon-park"
+  },
+  {
+    "folder": "05-parameters",
+    "file": "parameter-controls.svg",
+    "iconify_id": "icon-park:control",
+    "concept": "Parameter configuration",
+    "set": "icon-park"
+  },
+  {
+    "folder": "05-parameters",
+    "file": "config-dictionary.svg",
+    "iconify_id": "icon-park:config",
+    "concept": "CONFIG dictionary",
+    "set": "icon-park"
+  },
+  {
+    "folder": "05-parameters",
+    "file": "code-brackets.svg",
+    "iconify_id": "icon-park:code-brackets",
+    "concept": "Python implementation",
+    "set": "icon-park"
+  },
+  {
+    "folder": "05-parameters",
+    "file": "population-size.svg",
+    "iconify_id": "icon-park:people",
+    "concept": "Population size N",
+    "set": "icon-park"
+  },
+  {
+    "folder": "05-parameters",
+    "file": "mutation-sigma.svg",
+    "iconify_id": "icon-park:histogram",
+    "concept": "Mutation sigma / distribution",
+    "set": "icon-park"
+  },
+  {
+    "folder": "05-parameters",
+    "file": "random-seed.svg",
+    "iconify_id": "icon-park:seedling",
+    "concept": "Random seed",
+    "set": "icon-park"
+  },
+  {
+    "folder": "05-parameters",
+    "file": "reproducibility-sync.svg",
+    "iconify_id": "icon-park:refresh-one",
+    "concept": "Reproducibility",
+    "set": "icon-park"
+  },
+  {
+    "folder": "05-parameters",
+    "file": "comparison-balance.svg",
+    "iconify_id": "icon-park:balance-two",
+    "concept": "Crossover probability comparison",
+    "set": "icon-park"
+  },
+  {
+    "folder": "05-parameters",
+    "file": "multiple-runs.svg",
+    "iconify_id": "icon-park:chart-histogram-two",
+    "concept": "Multiple experiment runs",
+    "set": "icon-park"
+  },
+  {
+    "folder": "05-parameters",
+    "file": "experiment.svg",
+    "iconify_id": "icon-park:experiment",
+    "concept": "Experiment",
+    "set": "icon-park"
+  },
+  {
+    "folder": "06-implementation",
+    "file": "cli-terminal.svg",
+    "iconify_id": "icon-park:terminal",
+    "concept": "CLI implementation",
+    "set": "icon-park"
+  },
+  {
+    "folder": "06-implementation",
+    "file": "web-browser.svg",
+    "iconify_id": "icon-park:browser",
+    "concept": "Web visualizer",
+    "set": "icon-park"
+  },
+  {
+    "folder": "06-implementation",
+    "file": "monitor.svg",
+    "iconify_id": "icon-park:monitor",
+    "concept": "Web page / display",
+    "set": "icon-park"
+  },
+  {
+    "folder": "06-implementation",
+    "file": "auto-mode-play.svg",
+    "iconify_id": "icon-park:play-one",
+    "concept": "Auto mode",
+    "set": "icon-park"
+  },
+  {
+    "folder": "06-implementation",
+    "file": "manual-mode-click.svg",
+    "iconify_id": "icon-park:click-tap",
+    "concept": "Manual mode",
+    "set": "icon-park"
+  },
+  {
+    "folder": "06-implementation",
+    "file": "numbered-stages.svg",
+    "iconify_id": "icon-park:list-numbers",
+    "concept": "Numbered stages",
+    "set": "icon-park"
+  },
+  {
+    "folder": "06-implementation",
+    "file": "animation-speed.svg",
+    "iconify_id": "icon-park:speed-one",
+    "concept": "Animation speed",
+    "set": "icon-park"
+  },
+  {
+    "folder": "06-implementation",
+    "file": "file-structure.svg",
+    "iconify_id": "icon-park:folder-close",
+    "concept": "File structure",
+    "set": "icon-park"
+  },
+  {
+    "folder": "06-implementation",
+    "file": "parity-equals.svg",
+    "iconify_id": "icon-park:equal-ratio",
+    "concept": "Verification / parity test",
+    "set": "icon-park"
+  },
+  {
+    "folder": "06-implementation",
+    "file": "same-results.svg",
+    "iconify_id": "icon-park:check-correct",
+    "concept": "Same results across implementations",
+    "set": "icon-park"
+  },
+  {
+    "folder": "06-implementation",
+    "file": "step-forward.svg",
+    "iconify_id": "icon-park:next",
+    "concept": "Step-by-step execution",
+    "set": "icon-park"
+  }
+]

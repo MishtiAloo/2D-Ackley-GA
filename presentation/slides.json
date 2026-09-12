@@ -1,0 +1,106 @@
+[
+  {
+    "title": "Searching for the minimum",
+    "section": "Project presentation"
+  },
+  {
+    "title": "The route through the project",
+    "section": "Contents"
+  },
+  {
+    "title": "GA: improve a population through generations",
+    "section": "The idea"
+  },
+  {
+    "title": "The problem: find the bottom of a rippled basin",
+    "section": "Problem statement"
+  },
+  {
+    "title": "The baseline settings balance search and preservation",
+    "section": "GA settings"
+  },
+  {
+    "title": "Tuning: smaller steps help, but can miss the basin",
+    "section": "Parameter tuning"
+  },
+  {
+    "title": "Initialization: store real numbers and spread the search",
+    "section": "Methods \u00b7 encoding & initialization"
+  },
+  {
+    "title": "Selection: turn low cost into a higher chance",
+    "section": "Methods \u00b7 fitness & roulette"
+  },
+  {
+    "title": "Crossover: swap the second coordinate",
+    "section": "Methods \u00b7 one-point crossover"
+  },
+  {
+    "title": "Mutation: introduce new coordinate values",
+    "section": "Methods \u00b7 Gaussian mutation & bounds"
+  },
+  {
+    "title": "Protect the best\u2014and know when to stop",
+    "section": "Methods \u00b7 elitism & stopping"
+  },
+  {
+    "title": "The complete GA flow",
+    "section": "Algorithm map"
+  },
+  {
+    "title": "1 \u00b7 Initialize 50 candidate points",
+    "section": "Walkthrough \u00b7 seed 42"
+  },
+  {
+    "title": "2 \u00b7 Evaluate and rank the population",
+    "section": "Walkthrough \u00b7 seed 42"
+  },
+  {
+    "title": "3 \u00b7 Select the mating pool",
+    "section": "Walkthrough \u00b7 seed 42"
+  },
+  {
+    "title": "4 \u00b7 Crossover creates two children",
+    "section": "Walkthrough \u00b7 seed 42"
+  },
+  {
+    "title": "5 \u00b7 Mutate selected genes",
+    "section": "Walkthrough \u00b7 seed 42"
+  },
+  {
+    "title": "6 \u00b7 Insert the protected elite",
+    "section": "Walkthrough \u00b7 seed 42"
+  },
+  {
+    "title": "7 \u00b7 Commit and repeat",
+    "section": "Walkthrough \u00b7 seed 42"
+  },
+  {
+    "title": "Watch the population gather around the origin",
+    "section": "Algorithm in motion"
+  },
+  {
+    "title": "Convergence: fast gains, long plateaus, a late drop",
+    "section": "Results \u00b7 convergence"
+  },
+  {
+    "title": "Why did the average spike at generation 67?",
+    "section": "Results \u00b7 explain the curve"
+  },
+  {
+    "title": "Final result: close to the known optimum",
+    "section": "Results \u00b7 seed 42"
+  },
+  {
+    "title": "Why did the run stop short of zero?",
+    "section": "Results \u00b7 interpretation"
+  },
+  {
+    "title": "The GA found the right basin\u2014and exposed its limits",
+    "section": "Conclusion"
+  },
+  {
+    "title": "References and reproducibility",
+    "section": "Reference"
+  }
+]
